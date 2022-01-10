@@ -431,9 +431,7 @@ if args.train_mode == 'one_cls':
     metrics.append(acc_metric)
 
 
-    nb_f_metric = SequentialSpanFMetric(bundle.vocabs['target'], 'pred', 'target',encoding_type=args.encoding_type)
-    metrics.append(nb_f_metric)
-    nb_f_metric.set_metric_name('l12_nb')
+
 elif 'joint' in args.train_mode:
     i = 11
     if model_args.dataset not in english_pos_dataset:

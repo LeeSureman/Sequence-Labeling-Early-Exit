@@ -416,15 +416,7 @@ if args.train_mode == 'one_cls':
     metrics.append(acc_metric)
 
 
-    if args.dataset not in english_pos_dataset:
-        nb_f_metric = SequentialSpanFMetric(bundle.vocabs['target'], 'pred', 'target', encoding_type=args.encoding_type)
-        nb_f_metric.set_metric_name('l12_nb')
-        metrics.append(nb_f_metric)
 
-        vit_f_metric = ViterbiSpanFMetric(bundle.vocabs['target'], 'pred', 'target', encoding_type=args.encoding_type,
-                                          log_softmax=args.vit_log_softmax)
-        vit_f_metric.set_metric_name('l12_vit')
-        metrics.append(vit_f_metric)
 
 elif 'joint' in args.train_mode:
     i = 11
@@ -436,16 +428,7 @@ elif 'joint' in args.train_mode:
     acc_metric.set_metric_name('acc_{}'.format(i + 1))
     metrics.append(acc_metric)
 
-    if args.dataset not in english_pos_dataset:
 
-        nb_f_metric = SequentialSpanFMetric(bundle.vocabs['target'], 'pred', 'target', encoding_type=args.encoding_type)
-        nb_f_metric.set_metric_name('l12_nb')
-        metrics.append(nb_f_metric)
-
-        vit_f_metric = ViterbiSpanFMetric(bundle.vocabs['target'], 'pred', 'target',
-                                             encoding_type=args.encoding_type,log_softmax=args.vit_log_softmax)
-        vit_f_metric.set_metric_name('l12_vit')
-        metrics.append(vit_f_metric)
 
     for i in range(11):
         f_metric = SpanFPreRecMetric(i, bundle.vocabs['target'], 'pred', 'target', encoding_type=args.encoding_type)
