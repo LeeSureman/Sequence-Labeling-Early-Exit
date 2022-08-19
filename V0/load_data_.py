@@ -5,6 +5,10 @@ from transformers import AutoTokenizer,AlbertTokenizer,BertTokenizer
 from fastNLP import Vocabulary
 import tqdm
 import copy
+
+yangjie_rich_pretrain_unigram_path = ""
+yangjie_rich_pretrain_bigram_path = ""
+
 @cache_results(_cache_fp='tmp_conll',_refresh=False)
 def load_conll(fp, encoding_type='bio', pretrained_model_name_or_path=None):
     # assert pretrained_model_name_or_path

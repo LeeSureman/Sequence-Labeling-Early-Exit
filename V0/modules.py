@@ -5,7 +5,7 @@ from torch import nn
 import math
 from copy import deepcopy
 
-from V2.relative_transformer import RelativeMultiHeadAttn
+# from V2.relative_transformer import RelativeMultiHeadAttn
 
 
 class MultiHeadAttn(nn.Module):

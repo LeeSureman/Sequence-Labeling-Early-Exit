@@ -12,7 +12,7 @@ from utils import get_uncertainty,get_entropy
 from utils import mask_logit_by_certain_pred_and_constrain
 from utils import filter_error_transitions
 import torch.nn as nn
-from V5.modeling_bert_ee import Pseudo_Classifier
+from V0.modeling_bert_ee import Pseudo_Classifier
 import torch
 from transformers.models.albert.modeling_albert import AlbertModel,AlbertTransformer,AlbertLayer,AlbertLayerGroup,AlbertAttention,AlbertConfig
 from transformers.activations import ACT2FN
